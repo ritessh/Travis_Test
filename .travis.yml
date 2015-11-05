@@ -9,8 +9,9 @@ before_install:
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker pull carlad/sinatra
 - docker images
+- docker tag carlad/sinatra ritpraja/sinatra
 - docker push ritpraja/sinatra
-- docker rmi -f ritpraja/sinatra
+- docker rmi -f carlad/sinatra
 
 
 script:
