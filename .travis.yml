@@ -10,7 +10,7 @@ before_install:
 - docker pull carlad/sinatra
 - docker images
 - docker push ritpraja/sinatra
-
+- docker rmi -f ritpraja/sinatra
 
 
 script:
