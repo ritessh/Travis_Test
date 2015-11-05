@@ -12,6 +12,5 @@ before_install:
 - docker tag carlad/sinatra ritpraja/sinatra
 - docker push ritpraja/sinatra
 
-
 script:
 - bundle exec rake test
