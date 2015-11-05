@@ -1,0 +1,21 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+travis env set DOCKER_EMAIL me@example.com
+travis env set DOCKER_USERNAME myusername
+travis env set DOCKER_PASSWORD secretsecre
+
+before_install:
+- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- docker pull carlad/sinatra
+- docker images
+- docker push ritpraja/sinatra
+
+
+
+script:
+- bundle exec rake test
